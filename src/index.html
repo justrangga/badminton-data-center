@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <base target="_top">
+
+  <meta charset="UTF-8">
+
+  <title>Badminton Data Center</title>
+
+  <style>
+
+    body{
+
+      margin:40px;
+
+      font-family:Arial,sans-serif;
+
+      background:#f5f5f5;
+
+    }
+
+    .card{
+
+      max-width:700px;
+
+      margin:auto;
+
+      background:#ffffff;
+
+      border-radius:10px;
+
+      padding:24px;
+
+      box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+    }
+
+    pre{
+
+      background:#eeeeee;
+
+      padding:16px;
+
+      border-radius:6px;
+
+      overflow:auto;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Badminton Data Center</h2>
+
+<p>Framework Bootstrap</p>
+
+<pre id="result">Loading...</pre>
+
+</div>
+
+<script>
+
+google.script.run
+.withSuccessHandler(function(response){
+
+    document.getElementById("result").textContent =
+        JSON.stringify(response,null,2);
+
+})
+.getHealth();
+
+</script>
+
+</body>
+
+</html>
